@@ -1,9 +1,9 @@
 /* =================================
    Global Styles & CSS Variables
-   Modern Portfolio - Dark Theme
+   Modern Portfolio - Dark/Light Theme
    ================================= */
 
-/* CSS Custom Properties (Variables) */
+/* CSS Custom Properties (Variables) - Dark Theme (Default) */
 :root {
   /* Color Palette - Dark Theme */
   --bg-primary: #0d0d0d;
@@ -39,6 +39,39 @@
   --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.3);
   --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.4);
   --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.5);
+
+  /* Navbar Background */
+  --navbar-bg: rgba(13, 13, 13, 0.95);
+}
+
+/* Light Theme */
+[data-theme="light"] {
+  /* Color Palette - Light Theme */
+  --bg-primary: #f8f9fa;
+  --bg-secondary: #ffffff;
+  --bg-tertiary: #e9ecef;
+  
+  /* Text Colors */
+  --text-primary: #1a1a2e;
+  --text-secondary: #4a4a5a;
+  --text-tertiary: #6c757d;
+  
+  /* Accent Colors */
+  --accent-primary: #2F4F4F;  /* DarkSlateGray */
+  --accent-secondary: #3D6363;
+  --accent-hover: #1a3333;
+  
+  /* Utility Colors */
+  --border-color: #dee2e6;
+  
+  /* Shadows - Lighter */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.07);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.15);
+
+  /* Navbar Background */
+  --navbar-bg: rgba(248, 249, 250, 0.95);
 }
 
 /* Reset & Base Styles */
@@ -63,6 +96,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Typography Base */
