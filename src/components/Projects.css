@@ -1,0 +1,47 @@
+/* =================================
+   Projects Section Styles
+   ================================= */
+
+.projects {
+  padding: 6rem 0;
+  background: var(--bg-primary);
+}
+
+.projects-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.projects-intro {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  margin-bottom: 3rem;
+  max-width: 600px;
+}
+
+/* Projects Grid */
+.projects-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+/* View More CTA */
+.projects-cta {
+  display: flex;
+  justify-content: center;
+}
+
+/* Responsive grid */
+@media (min-width: 768px) {
+  .projects {
+    padding: 8rem 0;
+  }
+
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+}

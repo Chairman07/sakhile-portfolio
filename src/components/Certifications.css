@@ -1,0 +1,199 @@
+/* =================================
+   Certifications Section Styles
+   ================================= */
+
+.certifications {
+  padding: 6rem 0;
+  background: var(--bg-primary);
+}
+
+.certifications-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.certifications-intro {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  margin-bottom: 3rem;
+  max-width: 600px;
+}
+
+/* =================================
+   Certifications Grid
+   ================================= */
+
+.certifications-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+
+/* =================================
+   Certification Card
+   ================================= */
+
+.cert-card {
+  background: var(--bg-secondary);
+  border-radius: 12px;
+  padding: 1.5rem;
+  border: 1px solid var(--border-color);
+  display: flex;
+  gap: 1.25rem;
+  align-items: flex-start;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+}
+
+.cert-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent-primary);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Certificate Badge */
+.cert-badge {
+  flex-shrink: 0;
+  width: 52px;
+  height: 52px;
+  background: var(--bg-tertiary);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cert-icon {
+  font-size: 1.5rem;
+}
+
+/* Certificate Content */
+.cert-content {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.cert-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.25rem;
+  line-height: 1.4;
+}
+
+.cert-issuer {
+  color: var(--accent-primary);
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: 0.75rem;
+}
+
+/* Certificate Meta (credential + date) */
+.cert-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.cert-credential {
+  background: var(--bg-tertiary);
+  color: var(--text-secondary);
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.25rem 0.6rem;
+  border-radius: 4px;
+  font-family: var(--font-mono);
+  letter-spacing: 0.02em;
+}
+
+.cert-date {
+  color: var(--text-tertiary);
+  font-size: 0.8rem;
+}
+
+/* Certificate Link */
+.cert-link {
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  transition: color 0.2s ease, gap 0.2s ease;
+  margin-top: auto;
+}
+
+.cert-link:hover {
+  color: var(--accent-primary);
+  gap: 0.4rem;
+}
+
+/* =================================
+   Responsive Breakpoints
+   ================================= */
+
+/* Tablet: 2 columns */
+@media (min-width: 600px) {
+  .certifications-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+/* Medium screens */
+@media (min-width: 768px) {
+  .certifications {
+    padding: 8rem 0;
+  }
+
+  .cert-card {
+    padding: 1.5rem;
+  }
+
+  .cert-name {
+    font-size: 1.05rem;
+  }
+}
+
+/* Desktop: 3 columns, vertical layout */
+@media (min-width: 960px) {
+  .certifications-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .cert-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1.75rem 1.5rem;
+  }
+
+  .cert-badge {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 0.5rem;
+  }
+
+  .cert-icon {
+    font-size: 1.75rem;
+  }
+
+  .cert-content {
+    align-items: center;
+    text-align: center;
+  }
+
+  .cert-meta {
+    justify-content: center;
+  }
+
+  .cert-link {
+    justify-content: center;
+  }
+}
