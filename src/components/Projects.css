@@ -5,12 +5,30 @@
 .projects {
   padding: 6rem 0;
   background: var(--bg-primary);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Decorative background */
+.projects::before {
+  content: '';
+  position: absolute;
+  bottom: 10%;
+  left: -5%;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, var(--accent-primary) 0%, transparent 70%);
+  opacity: 0.03;
+  border-radius: 50%;
+  pointer-events: none;
 }
 
 .projects-container {
   max-width: 1000px;
   margin: 0 auto;
   padding: 0 1.5rem;
+  position: relative;
+  z-index: 1;
 }
 
 .projects-intro {
@@ -26,6 +44,18 @@
   grid-template-columns: 1fr;
   gap: 1.5rem;
   margin-bottom: 3rem;
+}
+
+/* Project item animation */
+.project-item {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.projects-grid.in-view .project-item {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* View More CTA */

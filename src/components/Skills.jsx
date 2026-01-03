@@ -6,7 +6,10 @@
  * - Web development technologies
  * - Cloud & DevOps tools
  * - Other tools and methodologies
+ * 
+ * Features scroll-triggered animations
  */
+import { useInView, useStaggeredAnimation } from '../hooks/useScrollAnimation';
 import './Skills.css';
 
 /**
@@ -42,15 +45,16 @@ const SKILL_CATEGORIES = Object.freeze([
 
 /**
  * SkillCard Component
- * Renders an individual skill category card
+ * Renders an individual skill category card with hover effects
  */
-function SkillCard({ category }) {
+function SkillCard({ category, delay }) {
   const { id, title, icon, skills } = category;
   
   return (
     <article 
       className="skill-card"
       aria-labelledby={`skill-title-${id}`}
+      style={{ transitionDelay: delay }}
     >
       <header className="skill-card-header">
         <span className="skill-icon" role="img" aria-hidden="true">
@@ -61,8 +65,8 @@ function SkillCard({ category }) {
         </h3>
       </header>
       <ul className="skill-list" aria-label={`${title} skills`}>
-        {skills.map((skill) => (
-          <li key={skill} className="skill-item">
+        {skills.map((skill, index) => (
+          <li key={skill} className="skill-item" style={{ transitionDelay: `${index * 50}ms` }}>
             <span className="skill-bullet" aria-hidden="true">▹</span>
             {skill}
           </li>
@@ -73,6 +77,12 @@ function SkillCard({ category }) {
 }
 
 function Skills() {
+  const [headerRef, headerInView] = useInView({ threshold: 0.2 });
+  const { ref: gridRef, isInView: gridInView, getDelay } = useStaggeredAnimation(
+    SKILL_CATEGORIES.length,
+    { threshold: 0.1, staggerDelay: 150 }
+  );
+
   return (
     <section 
       id="skills" 
@@ -81,7 +91,10 @@ function Skills() {
     >
       <div className="skills-container">
         {/* Section Header */}
-        <header className="section-header">
+        <header 
+          ref={headerRef}
+          className={`section-header animate-fade-up ${headerInView ? 'in-view' : ''}`}
+        >
           <h2 id="skills-heading" className="section-title">
             <span className="title-number" aria-hidden="true">01.</span>
             Skills & Technologies
@@ -89,14 +102,21 @@ function Skills() {
           <div className="section-line" aria-hidden="true" />
         </header>
 
-        <p className="skills-intro">
+        <p className={`skills-intro animate-fade-up ${headerInView ? 'in-view' : ''}`} style={{ transitionDelay: '200ms' }}>
           Here are the technologies and tools I've been working with:
         </p>
 
         {/* Skills Grid */}
-        <div className="skills-grid">
-          {SKILL_CATEGORIES.map((category) => (
-            <SkillCard key={category.id} category={category} />
+        <div 
+          ref={gridRef}
+          className={`skills-grid ${gridInView ? 'in-view' : ''}`}
+        >
+          {SKILL_CATEGORIES.map((category, index) => (
+            <SkillCard 
+              key={category.id} 
+              category={category} 
+              delay={getDelay(index)}
+            />
           ))}
         </div>
       </div>

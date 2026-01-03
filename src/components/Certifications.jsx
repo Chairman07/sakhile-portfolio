@@ -128,12 +128,13 @@ const CERTIFICATIONS = Object.freeze([
  *
  * @param {Object} props
  * @param {Certification} props.certification - Certification data
+ * @param {string} props.delay - Animation delay
  */
-function CertificationCard({ certification }) {
+function CertificationCard({ certification, delay }) {
   const { name, issuer, credential, date, url } = certification;
 
   return (
-    <article className="cert-card">
+    <article className="cert-card" style={{ transitionDelay: delay }}>
       <div className="cert-badge" aria-hidden="true">
         <span className="cert-icon">🏆</span>
       </div>
@@ -156,7 +157,7 @@ function CertificationCard({ certification }) {
             aria-label={`Verify ${name} credential (opens in new tab)`}
           >
             Verify Credential
-            <span aria-hidden="true"> →</span>
+            <span className="cert-arrow" aria-hidden="true"> →</span>
           </a>
         )}
       </div>
@@ -164,11 +165,19 @@ function CertificationCard({ certification }) {
   );
 }
 
+import { useInView, useStaggeredAnimation } from '../hooks/useScrollAnimation';
+
 /**
  * Certifications Section Component
  * Displays all professional certifications in a grid
  */
 function Certifications() {
+  const [headerRef, headerInView] = useInView({ threshold: 0.2 });
+  const [gridRef, gridInView] = useStaggeredAnimation({
+    threshold: 0.1,
+    staggerDelay: 100,
+  });
+
   return (
     <section
       id="certifications"
@@ -177,7 +186,10 @@ function Certifications() {
     >
       <div className="certifications-container">
         {/* Section Header */}
-        <header className="section-header">
+        <header
+          ref={headerRef}
+          className={`section-header animate-fade-up ${headerInView ? 'in-view' : ''}`}
+        >
           <h2 id="certifications-heading" className="section-title">
             <span className="title-number" aria-hidden="true">
               {SECTION_NUMBER}.
@@ -187,19 +199,23 @@ function Certifications() {
           <div className="section-line" aria-hidden="true" />
         </header>
 
-        <p className="certifications-intro">
+        <p className={`certifications-intro animate-fade-up ${headerInView ? 'in-view' : ''}`}>
           Professional certifications and credentials I've earned:
         </p>
 
         {/* Certifications Grid */}
         <div
-          className="certifications-grid"
+          ref={gridRef}
+          className={`certifications-grid ${gridInView ? 'in-view' : ''}`}
           role="list"
           aria-label="Professional certifications"
         >
-          {CERTIFICATIONS.map((cert) => (
+          {CERTIFICATIONS.map((cert, index) => (
             <div key={cert.id} role="listitem">
-              <CertificationCard certification={cert} />
+              <CertificationCard
+                certification={cert}
+                delay={`${index * 100}ms`}
+              />
             </div>
           ))}
         </div>

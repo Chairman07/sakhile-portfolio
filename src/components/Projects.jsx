@@ -7,6 +7,7 @@
  * - GitHub link for viewing more projects
  */
 import ProjectCard from './ProjectCard';
+import { useInView, useStaggeredAnimation } from '../hooks/useScrollAnimation';
 import './Projects.css';
 
 /**
@@ -61,6 +62,12 @@ const PROJECTS = Object.freeze([
 const GITHUB_PROFILE_URL = 'https://github.com/sakhiletwala';
 
 function Projects() {
+  const [headerRef, headerInView] = useInView({ threshold: 0.2 });
+  const [gridRef, gridInView] = useStaggeredAnimation({
+    threshold: 0.1,
+    staggerDelay: 150,
+  });
+
   return (
     <section 
       id="projects" 
@@ -69,7 +76,10 @@ function Projects() {
     >
       <div className="projects-container">
         {/* Section Header */}
-        <header className="section-header">
+        <header
+          ref={headerRef}
+          className={`section-header animate-fade-up ${headerInView ? 'in-view' : ''}`}
+        >
           <h2 id="projects-heading" className="section-title">
             <span className="title-number" aria-hidden="true">03.</span>
             Projects
@@ -77,26 +87,32 @@ function Projects() {
           <div className="section-line" aria-hidden="true" />
         </header>
 
-        <p className="projects-intro">
+        <p className={`projects-intro animate-fade-up ${headerInView ? 'in-view' : ''}`}>
           Here are some of the projects I've worked on. Each project represents 
           a unique challenge and learning opportunity.
         </p>
 
         {/* Projects Grid */}
         <div 
-          className="projects-grid"
+          ref={gridRef}
+          className={`projects-grid ${gridInView ? 'in-view' : ''}`}
           role="list"
           aria-label="Project showcase"
         >
-          {PROJECTS.map((project) => (
-            <div key={project.id} role="listitem">
+          {PROJECTS.map((project, index) => (
+            <div
+              key={project.id}
+              role="listitem"
+              className="project-item"
+              style={{ transitionDelay: `${index * 150}ms` }}
+            >
               <ProjectCard project={project} />
             </div>
           ))}
         </div>
 
         {/* View More Button */}
-        <div className="projects-cta">
+        <div className={`projects-cta animate-fade-up ${gridInView ? 'in-view' : ''}`}>
           <a
             href={GITHUB_PROFILE_URL}
             target="_blank"

@@ -6,6 +6,7 @@
  * - Email button
  * - Social media links (GitHub, LinkedIn, Email)
  */
+import { useInView } from '../hooks/useScrollAnimation';
 import './Contact.css';
 
 /**
@@ -89,27 +90,32 @@ const SOCIAL_LINKS = [
 ];
 
 function Contact() {
+  const [sectionRef, sectionInView] = useInView({ threshold: 0.2 });
+
   return (
     <section 
       id="contact" 
       className="contact"
       aria-labelledby="contact-heading"
     >
-      <div className="contact-container">
+      <div
+        ref={sectionRef}
+        className={`contact-container ${sectionInView ? 'in-view' : ''}`}
+      >
         {/* Section Header */}
         <header className="section-header centered">
-          <p className="section-label">
+          <p className="section-label animate-item">
             <span className="title-number" aria-hidden="true">05.</span>
             What's Next?
           </p>
-          <h2 id="contact-heading" className="contact-title">
+          <h2 id="contact-heading" className="contact-title animate-item">
             Get In Touch
           </h2>
         </header>
 
         {/* Contact Content */}
         <div className="contact-content">
-          <p className="contact-description">
+          <p className="contact-description animate-item">
             I'm currently open to new opportunities and would love to hear from 
             you. Whether you have a question, a project idea, or just want to 
             say hi, my inbox is always open. I'll try my best to get back to you!
@@ -118,17 +124,17 @@ function Contact() {
           {/* Email CTA */}
           <a
             href={`mailto:${CONTACT_INFO.email}`}
-            className="btn btn-primary contact-btn"
+            className="btn btn-primary contact-btn animate-item"
             aria-label="Send me an email"
           >
             Say Hello
           </a>
 
           {/* Social Links */}
-          <nav aria-label="Social media links">
+          <nav aria-label="Social media links" className="animate-item">
             <ul className="social-links">
-              {SOCIAL_LINKS.map(({ id, href, label, icon: Icon, external }) => (
-                <li key={id}>
+              {SOCIAL_LINKS.map(({ id, href, label, icon: Icon, external }, index) => (
+                <li key={id} style={{ transitionDelay: `${index * 100}ms` }}>
                   <a
                     href={href}
                     className="social-link"

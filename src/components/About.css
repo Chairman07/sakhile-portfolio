@@ -5,12 +5,30 @@
 .about {
   padding: 6rem 0;
   background: var(--bg-primary);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Decorative background */
+.about::before {
+  content: '';
+  position: absolute;
+  top: 30%;
+  left: -10%;
+  width: 350px;
+  height: 350px;
+  background: radial-gradient(circle, var(--accent-primary) 0%, transparent 70%);
+  opacity: 0.03;
+  border-radius: 50%;
+  pointer-events: none;
 }
 
 .about-container {
   max-width: 1000px;
   margin: 0 auto;
   padding: 0 1.5rem;
+  position: relative;
+  z-index: 1;
 }
 
 /* Section Header */
@@ -57,10 +75,22 @@
   gap: 1.25rem;
 }
 
-.about-text p {
+.about-text p,
+.about-paragraph {
   color: var(--text-secondary);
   font-size: 1rem;
   line-height: 1.8;
+}
+
+.about-paragraph {
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.about-content.in-view .about-paragraph {
+  opacity: 1;
+  transform: translateX(0);
 }
 
 /* Profile Image */
@@ -68,6 +98,14 @@
   display: flex;
   justify-content: center;
   align-items: flex-start;
+  opacity: 0;
+  transform: translateX(30px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.3s;
+}
+
+.about-content.in-view .about-image {
+  opacity: 1;
+  transform: translateX(0);
 }
 
 .image-wrapper {
@@ -86,11 +124,34 @@
   justify-content: center;
   position: relative;
   z-index: 2;
-  transition: transform 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+}
+
+/* Shimmer effect */
+.image-placeholder::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.05),
+    transparent
+  );
+  transition: left 0.8s ease;
+}
+
+.image-wrapper:hover .image-placeholder::before {
+  left: 100%;
 }
 
 .image-placeholder:hover {
-  transform: translate(-5px, -5px);
+  transform: translate(-8px, -8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
 }
 
 .initials {
@@ -98,6 +159,12 @@
   font-weight: 700;
   color: var(--accent-primary);
   opacity: 0.8;
+  transition: all 0.4s ease;
+}
+
+.image-wrapper:hover .initials {
+  transform: scale(1.1);
+  opacity: 1;
 }
 
 .image-border {
@@ -109,12 +176,13 @@
   border: 2px solid var(--accent-primary);
   border-radius: 12px;
   z-index: 1;
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .image-wrapper:hover .image-border {
   top: 10px;
   left: 10px;
+  border-color: var(--accent-secondary, #4a9f9f);
 }
 
 /* Desktop layout */

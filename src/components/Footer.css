@@ -6,6 +6,25 @@
   padding: 2rem 0;
   background: var(--bg-primary);
   border-top: 1px solid var(--border-color);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle gradient line */
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--accent-primary),
+    transparent
+  );
+  opacity: 0.5;
 }
 
 .footer-container {
@@ -24,6 +43,19 @@
 .footer-name {
   color: var(--accent-primary);
   font-weight: 500;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.footer-name::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--accent-primary);
+  transition: width 0.3s ease;
 }
 
 .footer-copyright {
@@ -34,6 +66,22 @@
 /* Hover effect for footer name */
 .footer-name:hover {
   color: var(--accent-hover);
+  text-shadow: 0 0 10px rgba(47, 79, 79, 0.3);
+}
+
+.footer-name:hover::after {
+  width: 100%;
+}
+
+/* Heart animation */
+.footer-heart {
+  display: inline-block;
+  animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.2); }
 }
 
 @media (min-width: 768px) {

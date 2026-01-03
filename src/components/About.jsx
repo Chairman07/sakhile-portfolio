@@ -6,6 +6,7 @@
  * - Technical expertise overview
  * - Profile image placeholder
  */
+import { useInView } from '../hooks/useScrollAnimation';
 import './About.css';
 
 /** About section paragraphs - easy to customize */
@@ -32,6 +33,9 @@ const ABOUT_PARAGRAPHS = [
 ];
 
 function About() {
+  const [headerRef, headerInView] = useInView({ threshold: 0.2 });
+  const [contentRef, contentInView] = useInView({ threshold: 0.2 });
+
   return (
     <section 
       id="about" 
@@ -40,7 +44,10 @@ function About() {
     >
       <div className="about-container">
         {/* Section Header */}
-        <header className="section-header">
+        <header
+          ref={headerRef}
+          className={`section-header animate-fade-up ${headerInView ? 'in-view' : ''}`}
+        >
           <h2 id="about-heading" className="section-title">
             <span className="title-number" aria-hidden="true">04.</span>
             About Me
@@ -49,10 +56,19 @@ function About() {
         </header>
 
         {/* About Content */}
-        <div className="about-content">
+        <div
+          ref={contentRef}
+          className={`about-content ${contentInView ? 'in-view' : ''}`}
+        >
           <div className="about-text">
             {ABOUT_PARAGRAPHS.map((paragraph, index) => (
-              <p key={index}>{paragraph}</p>
+              <p
+                key={index}
+                className="about-paragraph"
+                style={{ transitionDelay: `${index * 100}ms` }}
+              >
+                {paragraph}
+              </p>
             ))}
           </div>
 

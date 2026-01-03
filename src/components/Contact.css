@@ -5,6 +5,31 @@
 .contact {
   padding: 6rem 0;
   background: var(--bg-secondary);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Decorative elements */
+.contact::before,
+.contact::after {
+  content: '';
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, var(--accent-primary) 0%, transparent 70%);
+  opacity: 0.03;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.contact::before {
+  top: 10%;
+  left: -10%;
+}
+
+.contact::after {
+  bottom: 10%;
+  right: -10%;
 }
 
 .contact-container {
@@ -12,6 +37,40 @@
   margin: 0 auto;
   padding: 0 1.5rem;
   text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+/* Animation items */
+.animate-item {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.contact-container.in-view .animate-item {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.contact-container.in-view .section-label {
+  transition-delay: 0s;
+}
+
+.contact-container.in-view .contact-title {
+  transition-delay: 0.1s;
+}
+
+.contact-container.in-view .contact-description {
+  transition-delay: 0.2s;
+}
+
+.contact-container.in-view .contact-btn {
+  transition-delay: 0.3s;
+}
+
+.contact-container.in-view nav {
+  transition-delay: 0.4s;
 }
 
 /* Centered Section Header */
@@ -53,6 +112,29 @@
   margin-bottom: 3rem;
   padding: 1rem 2.5rem;
   font-size: 1.1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Button shine effect */
+.contact-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: left 0.5s ease;
+}
+
+.contact-btn:hover::before {
+  left: 100%;
 }
 
 /* Social Links */
@@ -66,24 +148,50 @@
 
 .social-links li {
   display: flex;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.contact-container.in-view .social-links li {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .social-link {
-  width: 48px;
-  height: 48px;
+  width: 52px;
+  height: 52px;
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--text-secondary);
   background: var(--bg-primary);
   border-radius: 50%;
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+/* Glow effect */
+.social-link::before {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary, #4a9f9f));
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
 }
 
 .social-link:hover {
-  color: var(--accent-primary);
-  transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  color: var(--bg-primary);
+  background: var(--accent-primary);
+  transform: translateY(-5px) scale(1.1);
+  box-shadow: 0 15px 30px rgba(47, 79, 79, 0.3);
+}
+
+.social-link:hover::before {
+  opacity: 0.3;
 }
 
 /* Responsive */
