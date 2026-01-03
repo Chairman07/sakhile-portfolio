@@ -13,10 +13,10 @@ import './Navbar.css';
 /** Navigation link configuration */
 const NAV_LINKS = Object.freeze([
   { id: 'hero', label: 'Home' },
-  { id: 'about', label: 'About' },
   { id: 'skills', label: 'Skills' },
   { id: 'certifications', label: 'Certifications' },
   { id: 'projects', label: 'Projects' },
+  { id: 'about', label: 'About' },
   { id: 'contact', label: 'Contact' },
 ]);
 

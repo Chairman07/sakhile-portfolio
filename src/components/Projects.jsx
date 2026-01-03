@@ -71,7 +71,7 @@ function Projects() {
         {/* Section Header */}
         <header className="section-header">
           <h2 id="projects-heading" className="section-title">
-            <span className="title-number" aria-hidden="true">04.</span>
+            <span className="title-number" aria-hidden="true">03.</span>
             Projects
           </h2>
           <div className="section-line" aria-hidden="true" />

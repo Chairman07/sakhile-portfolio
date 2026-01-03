@@ -40,10 +40,10 @@ function App() {
       {/* Main Content */}
       <main id="main-content">
         <Hero />
-        <About />
         <Skills />
         <Certifications />
         <Projects />
+        <About />
         <Contact />
       </main>
 

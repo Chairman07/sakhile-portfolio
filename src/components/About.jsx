@@ -42,7 +42,7 @@ function About() {
         {/* Section Header */}
         <header className="section-header">
           <h2 id="about-heading" className="section-title">
-            <span className="title-number" aria-hidden="true">01.</span>
+            <span className="title-number" aria-hidden="true">04.</span>
             About Me
           </h2>
           <div className="section-line" aria-hidden="true" />

@@ -83,7 +83,7 @@ function Skills() {
         {/* Section Header */}
         <header className="section-header">
           <h2 id="skills-heading" className="section-title">
-            <span className="title-number" aria-hidden="true">02.</span>
+            <span className="title-number" aria-hidden="true">01.</span>
             Skills & Technologies
           </h2>
           <div className="section-line" aria-hidden="true" />

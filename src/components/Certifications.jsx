@@ -12,7 +12,7 @@
 import './Certifications.css';
 
 /** Section number for consistent navigation */
-const SECTION_NUMBER = '03';
+const SECTION_NUMBER = '02';
 
 /**
  * Certification data structure
