@@ -46,6 +46,36 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: 1.25rem;
+  position: relative;
+}
+
+/* =================================
+   Smooth Snake Animation
+   Cards use CSS transforms for buttery transitions
+   ================================= */
+
+.cert-slot {
+  min-height: 140px;
+  position: relative;
+  border-radius: 12px;
+}
+
+/* Empty slot placeholder - subtle dashed border */
+.cert-slot.empty-slot {
+  background: transparent;
+  border: 2px dashed var(--border-color);
+  opacity: 0.2;
+  order: 100; /* Push empty slots to end */
+}
+
+/* Animated card slots - smooth snake movement */
+.cert-slot.cert-slot-animated {
+  /* Staggered transition for snake-like sequential movement */
+  transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition-delay: var(--stagger);
+  will-change: transform;
+  /* Mobile: single column - cards slide down */
+  transform: translateY(calc(var(--offset, 0) * (140px + 1.25rem)));
 }
 
 /* =================================
@@ -60,7 +90,7 @@
   display: flex;
   gap: 1.25rem;
   align-items: flex-start;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: border-color 0.4s, box-shadow 0.4s, transform 0.4s;
   height: 100%;
   position: relative;
   overflow: hidden;
@@ -68,56 +98,34 @@
   transform: translateY(30px);
 }
 
-/* Gradient top border effect */
-.cert-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary, #4a9f9f));
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-/* Shimmer effect on hover */
-.cert-card::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.03),
-    transparent
-  );
-  transition: left 0.6s ease;
-  pointer-events: none;
-}
-
+/* Cards appear when in view */
 .certifications-grid.in-view .cert-card {
   opacity: 1;
   transform: translateY(0);
 }
 
+/* Staggered entry for initial appearance */
+.certifications-grid.in-view .cert-slot:nth-child(1) .cert-card { transition-delay: 0ms; }
+.certifications-grid.in-view .cert-slot:nth-child(2) .cert-card { transition-delay: 80ms; }
+.certifications-grid.in-view .cert-slot:nth-child(3) .cert-card { transition-delay: 160ms; }
+.certifications-grid.in-view .cert-slot:nth-child(4) .cert-card { transition-delay: 240ms; }
+.certifications-grid.in-view .cert-slot:nth-child(5) .cert-card { transition-delay: 320ms; }
+.certifications-grid.in-view .cert-slot:nth-child(6) .cert-card { transition-delay: 400ms; }
+.certifications-grid.in-view .cert-slot:nth-child(7) .cert-card { transition-delay: 480ms; }
+.certifications-grid.in-view .cert-slot:nth-child(8) .cert-card { transition-delay: 560ms; }
+.certifications-grid.in-view .cert-slot:nth-child(9) .cert-card { transition-delay: 640ms; }
+.certifications-grid.in-view .cert-slot:nth-child(10) .cert-card { transition-delay: 720ms; }
+.certifications-grid.in-view .cert-slot:nth-child(11) .cert-card { transition-delay: 800ms; }
+.certifications-grid.in-view .cert-slot:nth-child(12) .cert-card { transition-delay: 880ms; }
+.certifications-grid.in-view .cert-slot:nth-child(13) .cert-card { transition-delay: 960ms; }
+.certifications-grid.in-view .cert-slot:nth-child(14) .cert-card { transition-delay: 1040ms; }
+
+/* Hover effect */
 .cert-card:hover {
   transform: translateY(-8px) scale(1.02);
   border-color: var(--accent-primary);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25),
               0 0 20px rgba(47, 79, 79, 0.1);
-}
-
-.cert-card:hover::before {
-  transform: scaleX(1);
-}
-
-.cert-card:hover::after {
-  left: 100%;
 }
 
 /* Certificate Badge */
@@ -132,13 +140,25 @@
   justify-content: center;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
+  padding: 10px;
+}
+
+/* Logo SVG styling */
+.cert-logo {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.3s ease;
 }
 
 /* Badge glow effect on hover */
 .cert-card:hover .cert-badge {
-  background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary, #4a9f9f));
+  background: var(--bg-tertiary);
   transform: scale(1.1) rotate(5deg);
   box-shadow: 0 8px 20px rgba(47, 79, 79, 0.3);
+}
+
+.cert-card:hover .cert-logo {
+  transform: scale(1.1);
 }
 
 .cert-icon {
@@ -250,6 +270,13 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
   }
+  
+  /* Snake movement: translate cards by offset * (card width + gap) */
+  /* Each card slides smoothly in sequence */
+  .cert-slot.cert-slot-animated {
+    /* Move horizontally on 2-col grid based on offset */
+    transform: translateX(calc(var(--offset) * (100% + 1.5rem) / 2));
+  }
 }
 
 /* Medium screens */
@@ -271,6 +298,11 @@
 @media (min-width: 960px) {
   .certifications-grid {
     grid-template-columns: repeat(3, 1fr);
+  }
+  
+  /* Snake movement on 3-col grid */
+  .cert-slot.cert-slot-animated {
+    transform: translateX(calc(var(--offset) * (100% + 1.5rem) / 3));
   }
 
   .cert-card {
