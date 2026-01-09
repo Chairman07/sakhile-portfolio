@@ -71,12 +71,25 @@
 /* Animated card slots - smooth snake movement */
 .cert-slot.cert-slot-animated {
   /* Staggered transition for snake-like sequential movement */
-  transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: transform 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   transition-delay: var(--stagger);
   will-change: transform;
-  /* Mobile: single column - cards slide down */
-  transform: translateY(calc(var(--offset, 0) * (140px + 1.25rem)));
+  /* Mobile: single column - cards slide down (halved movement) */
+  transform: translateY(calc(var(--offset, 0) * (70px + 0.625rem)));
 }
+
+/* Row-based delays for staggered animation effect */
+/* Mobile: 1 column - each card is its own row */
+.cert-slot.cert-slot-animated:nth-child(n+3) { transition-delay: 0.1s; }
+.cert-slot.cert-slot-animated:nth-child(n+4) { transition-delay: 0.15s; }
+.cert-slot.cert-slot-animated:nth-child(n+5) { transition-delay: 0.2s; }
+.cert-slot.cert-slot-animated:nth-child(n+6) { transition-delay: 0.25s; }
+.cert-slot.cert-slot-animated:nth-child(n+7) { transition-delay: 0.3s; }
+.cert-slot.cert-slot-animated:nth-child(n+8) { transition-delay: 0.35s; }
+.cert-slot.cert-slot-animated:nth-child(n+9) { transition-delay: 0.4s; }
+.cert-slot.cert-slot-animated:nth-child(n+10) { transition-delay: 0.45s; }
+.cert-slot.cert-slot-animated:nth-child(n+11) { transition-delay: 0.5s; }
+.cert-slot.cert-slot-animated:nth-child(n+12) { transition-delay: 0.55s; }
 
 /* =================================
    Certification Card
@@ -275,8 +288,22 @@
   /* Each card slides smoothly in sequence */
   .cert-slot.cert-slot-animated {
     /* Move horizontally on 2-col grid based on offset */
-    transform: translateX(calc(var(--offset) * (100% + 1.5rem) / 2));
+    transform: translateX(calc(var(--offset) * (50% + 0.75rem)));
   }
+  
+  /* Row-based delays for 2-column layout */
+  /* Row 1 (cards 1-2): no delay */
+  .cert-slot.cert-slot-animated:nth-child(-n+2) { transition-delay: 0s; }
+  /* Row 2 (cards 3-4) */
+  .cert-slot.cert-slot-animated:nth-child(n+3):nth-child(-n+4) { transition-delay: 0.12s; }
+  /* Row 3 (cards 5-6) */
+  .cert-slot.cert-slot-animated:nth-child(n+5):nth-child(-n+6) { transition-delay: 0.24s; }
+  /* Row 4 (cards 7-8) */
+  .cert-slot.cert-slot-animated:nth-child(n+7):nth-child(-n+8) { transition-delay: 0.36s; }
+  /* Row 5 (cards 9-10) */
+  .cert-slot.cert-slot-animated:nth-child(n+9):nth-child(-n+10) { transition-delay: 0.48s; }
+  /* Row 6 (cards 11-12) */
+  .cert-slot.cert-slot-animated:nth-child(n+11):nth-child(-n+12) { transition-delay: 0.6s; }
 }
 
 /* Medium screens */
@@ -302,8 +329,18 @@
   
   /* Snake movement on 3-col grid */
   .cert-slot.cert-slot-animated {
-    transform: translateX(calc(var(--offset) * (100% + 1.5rem) / 3));
+    transform: translateX(calc(var(--offset) * (33.33% + 0.5rem)));
   }
+  
+  /* Row-based delays for 3-column layout */
+  /* Row 1 (cards 1-3): no delay */
+  .cert-slot.cert-slot-animated:nth-child(-n+3) { transition-delay: 0s; }
+  /* Row 2 (cards 4-6) */
+  .cert-slot.cert-slot-animated:nth-child(n+4):nth-child(-n+6) { transition-delay: 0.15s; }
+  /* Row 3 (cards 7-9) */
+  .cert-slot.cert-slot-animated:nth-child(n+7):nth-child(-n+9) { transition-delay: 0.3s; }
+  /* Row 4 (cards 10-12) */
+  .cert-slot.cert-slot-animated:nth-child(n+10):nth-child(-n+12) { transition-delay: 0.45s; }
 
   .cert-card {
     flex-direction: column;

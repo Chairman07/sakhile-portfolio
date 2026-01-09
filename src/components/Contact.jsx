@@ -16,7 +16,7 @@ import './Contact.css';
 const CONTACT_INFO = Object.freeze({
   email: 'sakhile.twala@example.com',
   github: 'https://github.com/sakhiletwala',
-  linkedin: 'https://linkedin.com/in/sakhiletwala',
+  linkedin: 'https://www.linkedin.com/in/sakhile-twala-b05386247/',
 });
 
 /** SVG Icons as components for maintainability */
@@ -105,7 +105,7 @@ function Contact() {
         {/* Section Header */}
         <header className="section-header centered">
           <p className="section-label animate-item">
-            <span className="title-number" aria-hidden="true">05.</span>
+            <span className="title-number" aria-hidden="true">06.</span>
             What's Next?
           </p>
           <h2 id="contact-heading" className="contact-title animate-item">

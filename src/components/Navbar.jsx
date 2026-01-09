@@ -18,6 +18,7 @@ const NAV_LINKS = Object.freeze([
   { id: 'skills', label: 'Skills' },
   { id: 'certifications', label: 'Certifications' },
   { id: 'projects', label: 'Projects' },
+  { id: 'education', label: 'Education' },
   { id: 'about', label: 'About' },
   { id: 'contact', label: 'Contact' },
 ]);

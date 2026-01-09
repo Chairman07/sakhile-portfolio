@@ -8,6 +8,7 @@
  * - Skills: Technical skills showcase
  * - Certifications: Professional credentials
  * - Projects: Portfolio project cards
+ * - Education: Educational background
  * - Contact: Contact information and social links
  * - Footer: Copyright and credits
  * 
@@ -23,6 +24,7 @@ import About from './components/About';
 import Skills from './components/Skills';
 import Certifications from './components/Certifications';
 import Projects from './components/Projects';
+import Education from './components/Education';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 
@@ -43,6 +45,7 @@ function App() {
         <Skills />
         <Certifications />
         <Projects />
+        <Education />
         <About />
         <Contact />
       </main>

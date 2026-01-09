@@ -138,8 +138,19 @@ function Hero() {
               </svg>
             </a>
             <a 
-              href="#contact"
+              href="/Sakhile_Twala_CV.pdf"
               className="btn btn-secondary btn-animated"
+              download
+              aria-label="Download CV (PDF)"
+            >
+              <svg className="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/>
+              </svg>
+              <span>Download CV</span>
+            </a>
+            <a 
+              href="#contact"
+              className="btn btn-outline btn-animated"
               onClick={(e) => {
                 e.preventDefault();
                 scrollToSection('contact');

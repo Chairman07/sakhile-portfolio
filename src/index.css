@@ -47,9 +47,9 @@
 /* Light Theme */
 [data-theme="light"] {
   /* Color Palette - Light Theme */
-  --bg-primary: #f8f9fa;
+  --bg-primary: #FBF7EF;
   --bg-secondary: #ffffff;
-  --bg-tertiary: #e9ecef;
+  --bg-tertiary: #F5F0E6;
   
   /* Text Colors */
   --text-primary: #1a1a2e;
@@ -62,7 +62,7 @@
   --accent-hover: #1a3333;
   
   /* Utility Colors */
-  --border-color: #dee2e6;
+  --border-color: #E8E3D9;
   
   /* Shadows - Lighter */
   --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
@@ -71,7 +71,7 @@
   --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.15);
 
   /* Navbar Background */
-  --navbar-bg: rgba(248, 249, 250, 0.95);
+  --navbar-bg: rgba(251, 247, 239, 0.95);
 }
 
 /* Reset & Base Styles */

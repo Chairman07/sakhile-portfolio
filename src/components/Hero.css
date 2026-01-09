@@ -339,6 +339,30 @@
   box-shadow: 0 8px 25px rgba(47, 79, 79, 0.3);
 }
 
+/* Button icon (for download button) */
+.btn-icon {
+  width: 18px;
+  height: 18px;
+  transition: transform 0.3s ease;
+}
+
+.btn-secondary:hover .btn-icon {
+  transform: translateY(2px);
+}
+
+/* Outline button variant */
+.btn-outline {
+  background: transparent;
+  color: var(--text-secondary);
+  border: 2px solid var(--border-color);
+}
+
+.btn-outline:hover {
+  border-color: var(--accent-primary);
+  color: var(--accent-primary);
+  transform: translateY(-3px);
+}
+
 /* =================================
    Scroll Indicator
    ================================= */

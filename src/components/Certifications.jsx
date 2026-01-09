@@ -263,7 +263,7 @@ function Certifications() {
         }
         return newOffset;
       });
-    }, 2500);
+    }, 4000);
 
     return () => clearInterval(interval);
   }, [gridInView, direction]);

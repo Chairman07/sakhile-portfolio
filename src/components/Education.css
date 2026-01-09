@@ -1,0 +1,356 @@
+/* =================================
+   Education Section Styles
+   ================================= */
+
+.education {
+  padding: 6rem 0;
+  background: var(--bg-secondary);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Decorative background */
+.education::before {
+  content: '';
+  position: absolute;
+  top: 10%;
+  left: -10%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, var(--accent-primary) 0%, transparent 70%);
+  opacity: 0.03;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.education-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.education-intro {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  margin-bottom: 3rem;
+  max-width: 600px;
+}
+
+/* =================================
+   Section Header (matching other sections)
+   ================================= */
+
+.education .section-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.education .section-title {
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  font-weight: 700;
+  color: var(--text-primary);
+  white-space: nowrap;
+}
+
+.education .title-number {
+  color: var(--accent-primary);
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+  font-weight: 500;
+}
+
+.education .section-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    var(--border-color) 0%,
+    transparent 100%
+  );
+  max-width: 300px;
+}
+
+/* =================================
+   Timeline Container
+   ================================= */
+
+.education-timeline-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* =================================
+   Education Card
+   ================================= */
+
+.education-card {
+  display: flex;
+  gap: 1.5rem;
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.education-timeline-container.in-view .education-card {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Timeline elements */
+.education-timeline {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 0.5rem;
+}
+
+.timeline-dot {
+  width: 16px;
+  height: 16px;
+  background: var(--accent-primary);
+  border-radius: 50%;
+  border: 3px solid var(--bg-secondary);
+  box-shadow: 0 0 0 3px var(--accent-primary);
+  z-index: 1;
+  flex-shrink: 0;
+}
+
+.timeline-line {
+  width: 2px;
+  flex: 1;
+  background: linear-gradient(
+    180deg,
+    var(--accent-primary) 0%,
+    var(--border-color) 100%
+  );
+  margin-top: 0.5rem;
+}
+
+/* Hide line on last card */
+.education-card:last-child .timeline-line {
+  display: none;
+}
+
+/* Card content */
+.education-content {
+  flex: 1;
+  background: var(--bg-primary);
+  border-radius: 12px;
+  padding: 1.5rem;
+  border: 1px solid var(--border-color);
+  margin-bottom: 1.5rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.education-content:hover {
+  border-color: var(--accent-primary);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  transform: translateY(-4px);
+}
+
+/* Card header */
+.education-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.education-icon-wrapper {
+  width: 44px;
+  height: 44px;
+  background: var(--bg-tertiary);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.education-content:hover .education-icon-wrapper {
+  background: var(--accent-primary);
+  transform: scale(1.1) rotate(5deg);
+}
+
+.education-icon {
+  width: 24px;
+  height: 24px;
+  color: var(--accent-primary);
+  transition: color 0.3s ease;
+}
+
+.education-content:hover .education-icon {
+  color: #fff;
+}
+
+.education-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.25rem;
+}
+
+.education-duration {
+  background: var(--bg-tertiary);
+  color: var(--accent-primary);
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.3rem 0.75rem;
+  border-radius: 20px;
+  font-family: var(--font-mono);
+}
+
+.education-location {
+  color: var(--text-tertiary);
+  font-size: 0.8rem;
+}
+
+/* Card text */
+.education-degree {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.35rem;
+  line-height: 1.4;
+}
+
+.education-institution {
+  color: var(--accent-primary);
+  font-size: 0.95rem;
+  font-weight: 500;
+  margin-bottom: 0.75rem;
+}
+
+.education-description {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+/* =================================
+   Modules Tags (Tech Stack Style)
+   ================================= */
+
+.education-modules {
+  margin-top: 1rem;
+}
+
+.modules-label {
+  font-size: 0.8rem;
+  color: var(--text-tertiary);
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.modules-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.module-item {
+  background: var(--bg-tertiary);
+  color: var(--text-secondary);
+  font-size: 0.75rem;
+  padding: 0.35rem 0.75rem;
+  border-radius: 4px;
+  font-family: var(--font-mono);
+  transition: all 0.2s ease;
+  border: 1px solid transparent;
+}
+
+.module-item:hover {
+  color: var(--accent-primary);
+  border-color: var(--accent-primary);
+  transform: translateY(-2px);
+}
+
+/* Incomplete module styling */
+.module-item.incomplete {
+  background: rgba(255, 193, 7, 0.1);
+  color: #ffc107;
+  border: 1px solid rgba(255, 193, 7, 0.3);
+}
+
+.module-item.incomplete:hover {
+  background: rgba(255, 193, 7, 0.2);
+  border-color: #ffc107;
+}
+
+.education-modules.incomplete .modules-label {
+  color: #ffc107;
+}
+
+/* =================================
+   Animation Classes
+   ================================= */
+
+.education .animate-fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.education .animate-fade-up.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =================================
+   Responsive Breakpoints
+   ================================= */
+
+@media (min-width: 768px) {
+  .education {
+    padding: 8rem 0;
+  }
+
+  .education-content {
+    padding: 2rem;
+  }
+
+  .education-degree {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .education-card {
+    gap: 1rem;
+  }
+
+  .education-timeline {
+    padding-top: 0.25rem;
+  }
+
+  .timeline-dot {
+    width: 12px;
+    height: 12px;
+  }
+
+  .education-content {
+    padding: 1.25rem;
+  }
+
+  .education-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .education-meta {
+    align-items: flex-start;
+    flex-direction: row;
+    gap: 0.5rem;
+  }
+}

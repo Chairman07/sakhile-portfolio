@@ -49,7 +49,7 @@ function About() {
           className={`section-header animate-fade-up ${headerInView ? 'in-view' : ''}`}
         >
           <h2 id="about-heading" className="section-title">
-            <span className="title-number" aria-hidden="true">04.</span>
+            <span className="title-number" aria-hidden="true">05.</span>
             About Me
           </h2>
           <div className="section-line" aria-hidden="true" />
