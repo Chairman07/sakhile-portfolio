@@ -18,7 +18,7 @@
   right: -200px;
   width: 400px;
   height: 400px;
-  background: var(--accent-primary);
+  background: var(--accent-bg);
   opacity: 0.03;
   border-radius: 50%;
   filter: blur(100px);
@@ -76,7 +76,7 @@
   left: 0;
   right: 0;
   height: 3px;
-  background: linear-gradient(90deg, var(--accent-primary), var(--accent-hover));
+  background: linear-gradient(90deg, var(--accent-bg), var(--accent-hover));
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.4s ease;
@@ -113,7 +113,7 @@
 
 .skill-card:hover .skill-icon {
   transform: scale(1.1) rotate(5deg);
-  background: var(--accent-primary);
+  background: var(--accent-bg);
 }
 
 .skill-category {

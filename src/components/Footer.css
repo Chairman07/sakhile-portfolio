@@ -54,7 +54,7 @@
   left: 0;
   width: 0;
   height: 1px;
-  background: var(--accent-primary);
+  background: var(--accent-bg);
   transition: width 0.3s ease;
 }
 

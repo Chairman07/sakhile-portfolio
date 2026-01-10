@@ -120,11 +120,28 @@ const TECH_LOGOS = {
     </svg>
   ),
   linux: (
+    // Tux the Linux Penguin
     <svg viewBox="0 0 24 24" className="skill-logo">
-      <path fill="#FCC624" d="M12 3c-.8 0-1.5.3-2 .8-.5.5-.8 1.2-.8 2 0 .5.1 1 .3 1.4-.2.5-.3 1.1-.3 1.7 0 .8.2 1.5.5 2.1-.3.2-.5.5-.7.8-.4.7-.5 1.5-.3 2.3.2.8.7 1.5 1.4 1.9.5.3 1 .5 1.6.5h.6c.2 0 .3 0 .5-.1.3 1 1.2 1.8 2.2 1.8s1.9-.8 2.2-1.8c.2.1.3.1.5.1h.6c.6 0 1.1-.2 1.6-.5.7-.4 1.2-1.1 1.4-1.9.2-.8.1-1.6-.3-2.3-.2-.3-.4-.6-.7-.8.3-.6.5-1.3.5-2.1 0-.6-.1-1.2-.3-1.7.2-.4.3-.9.3-1.4 0-.8-.3-1.5-.8-2-.5-.5-1.2-.8-2-.8z"/>
-      <path fill="#000" d="M9.5 8.5c-.4 0-.7.3-.7.7s.3.7.7.7.7-.3.7-.7-.3-.7-.7-.7zm5 0c-.4 0-.7.3-.7.7s.3.7.7.7.7-.3.7-.7-.3-.7-.7-.7zM12 13.5c-.8 0-1.5.4-1.9 1h3.8c-.4-.6-1.1-1-1.9-1z"/>
-      <ellipse fill="#FFF" cx="9.5" cy="9.2" rx=".3" ry=".4"/>
-      <ellipse fill="#FFF" cx="14.5" cy="9.2" rx=".3" ry=".4"/>
+      {/* Body */}
+      <ellipse fill="#000000" cx="12" cy="14" rx="7" ry="8"/>
+      {/* White belly */}
+      <ellipse fill="#FFFFFF" cx="12" cy="15" rx="5" ry="6"/>
+      {/* Head */}
+      <circle fill="#000000" cx="12" cy="6" r="5"/>
+      {/* Face/white area */}
+      <ellipse fill="#FFFFFF" cx="12" cy="7" rx="3.5" ry="3"/>
+      {/* Left eye */}
+      <ellipse fill="#FFFFFF" cx="10.5" cy="6" rx="1.2" ry="1.5"/>
+      <ellipse fill="#000000" cx="10.5" cy="6.2" rx="0.5" ry="0.7"/>
+      {/* Right eye */}
+      <ellipse fill="#FFFFFF" cx="13.5" cy="6" rx="1.2" ry="1.5"/>
+      <ellipse fill="#000000" cx="13.5" cy="6.2" rx="0.5" ry="0.7"/>
+      {/* Beak */}
+      <path fill="#F5A623" d="M12 7.5l-1.5 1.5h3L12 7.5z"/>
+      {/* Left foot */}
+      <ellipse fill="#F5A623" cx="9" cy="21" rx="2" ry="1"/>
+      {/* Right foot */}
+      <ellipse fill="#F5A623" cx="15" cy="21" rx="2" ry="1"/>
     </svg>
   ),
   agile: (
@@ -170,6 +187,135 @@ const TECH_LOGOS = {
       </g>
     </svg>
   ),
+  // Cloud Security & Linux Tools
+  bash: (
+    // GNU Bash logo - Terminal with $ prompt
+    <svg viewBox="0 0 24 24" className="skill-logo">
+      <path fill="#4EAA25" d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+      <path fill="#2E7D32" d="M4 4h16c1.1 0 2 .9 2 2v2H2V6c0-1.1.9-2 2-2z"/>
+      <circle fill="#EF5350" cx="5" cy="6" r="1"/>
+      <circle fill="#FFCA28" cx="8" cy="6" r="1"/>
+      <circle fill="#66BB6A" cx="11" cy="6" r="1"/>
+      <text x="5" y="15" fill="#FFFFFF" fontSize="6" fontFamily="monospace" fontWeight="bold">$_</text>
+    </svg>
+  ),
+  terraform: (
+    // HashiCorp Terraform logo
+    <svg viewBox="0 0 24 24" className="skill-logo">
+      <path fill="#7B42BC" d="M8.654 3.891v5.588l4.846 2.794V6.685L8.654 3.89z"/>
+      <path fill="#7B42BC" d="M14.125 6.685v5.588l4.846-2.794V3.891l-4.846 2.794z"/>
+      <path fill="#7B42BC" d="M3.529 6.412v5.588l4.846 2.794V9.206L3.529 6.412z"/>
+      <path fill="#7B42BC" d="M8.654 15.306v5.588l4.846 2.794v-5.588l-4.846-2.794z"/>
+    </svg>
+  ),
+  wireshark: (
+    // Wireshark logo - Shark fin
+    <svg viewBox="0 0 24 24" className="skill-logo">
+      <path fill="#1679A7" d="M2 14c0-5.5 4.5-10 10-10s10 4.5 10 10c0 2-2 4-4 4H6c-2 0-4-2-4-4z"/>
+      <path fill="#5BB5E8" d="M12 6c-4 0-7 3-7 7h14c0-4-3-7-7-7z"/>
+      <path fill="#1679A7" d="M8 11l4-3 4 3v4l-4 2-4-2v-4z"/>
+      <path fill="#FFF" d="M10 12h4v2h-4z"/>
+    </svg>
+  ),
+  nmap: (
+    // Nmap logo - Network scanner eye
+    <svg viewBox="0 0 24 24" className="skill-logo">
+      <circle fill="#4A90D9" cx="12" cy="12" r="10"/>
+      <circle fill="#1565C0" cx="12" cy="12" r="6"/>
+      <circle fill="#0D47A1" cx="12" cy="12" r="3"/>
+      <circle fill="#FFF" cx="12" cy="12" r="1.5"/>
+      <path fill="none" stroke="#4A90D9" strokeWidth="1" d="M12 2v4M12 18v4M2 12h4M18 12h4"/>
+    </svg>
+  ),
+  burpsuite: (
+    // Burp Suite logo - Orange flame/target
+    <svg viewBox="0 0 24 24" className="skill-logo">
+      <circle fill="#FF6633" cx="12" cy="12" r="10"/>
+      <circle fill="#FFF" cx="12" cy="12" r="7"/>
+      <circle fill="#FF6633" cx="12" cy="12" r="4"/>
+      <circle fill="#FFF" cx="12" cy="12" r="1.5"/>
+    </svg>
+  ),
+  splunk: (
+    // Splunk logo - Greater than symbol
+    <svg viewBox="0 0 24 24" className="skill-logo">
+      <rect fill="#000000" width="24" height="24" rx="3"/>
+      <path fill="#65A637" d="M7 6l8 6-8 6V6z"/>
+    </svg>
+  ),
+  iam: (
+    // IAM - Identity/Key lock icon
+    <svg viewBox="0 0 24 24" className="skill-logo">
+      <path fill="#FF9900" d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/>
+      <path fill="#232F3E" d="M12 6c-1.1 0-2 .9-2 2v1h-.5c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1h5c.55 0 1-.45 1-1v-4c0-.55-.45-1-1-1H14V8c0-1.1-.9-2-2-2zm0 1c.55 0 1 .45 1 1v1h-2V8c0-.55.45-1 1-1z"/>
+    </svg>
+  ),
+  firewall: (
+    // Firewall/WAF - Shield with brick wall
+    <svg viewBox="0 0 24 24" className="skill-logo">
+      <path fill="#F44336" d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/>
+      <rect fill="#FFF" x="5" y="8" width="6" height="3"/>
+      <rect fill="#FFF" x="13" y="8" width="6" height="3"/>
+      <rect fill="#FFF" x="8" y="12" width="8" height="3"/>
+      <rect fill="#FFF" x="5" y="16" width="6" height="2"/>
+      <rect fill="#FFF" x="13" y="16" width="4" height="2"/>
+    </svg>
+  ),
+  siem: (
+    // SIEM - Security monitoring dashboard
+    <svg viewBox="0 0 24 24" className="skill-logo">
+      <rect fill="#00BCD4" x="2" y="3" width="20" height="14" rx="2"/>
+      <rect fill="#0097A7" x="2" y="3" width="20" height="3" rx="2"/>
+      <circle fill="#4DD0E1" cx="5" cy="4.5" r="1"/>
+      <rect fill="#FFF" x="4" y="8" width="7" height="3" rx="1"/>
+      <rect fill="#FFF" x="13" y="8" width="7" height="3" rx="1"/>
+      <rect fill="#FFF" x="4" y="12" width="16" height="3" rx="1"/>
+      <rect fill="#0097A7" x="8" y="17" width="8" height="2"/>
+      <rect fill="#00BCD4" x="6" y="19" width="12" height="2" rx="1"/>
+    </svg>
+  ),
+  ssh: (
+    // SSH - Secure shell terminal with lock
+    <svg viewBox="0 0 24 24" className="skill-logo">
+      <rect fill="#231F20" x="2" y="4" width="20" height="14" rx="2"/>
+      <rect fill="#333" x="2" y="4" width="20" height="3"/>
+      <circle fill="#FF5F56" cx="5" cy="5.5" r="1"/>
+      <circle fill="#FFBD2E" cx="8" cy="5.5" r="1"/>
+      <circle fill="#27CA40" cx="11" cy="5.5" r="1"/>
+      <text x="4" y="14" fill="#00FF00" fontSize="5" fontFamily="monospace">ssh@</text>
+      <path fill="#FFD700" d="M18 11v-1c0-1.1-.9-2-2-2s-2 .9-2 2v1c-.55 0-1 .45-1 1v3c0 .55.45 1 1 1h4c.55 0 1-.45 1-1v-3c0-.55-.45-1-1-1zm-1 0h-2v-1c0-.55.45-1 1-1s1 .45 1 1v1z"/>
+    </svg>
+  ),
+  vim: (
+    // Vim logo - Green V with diamond
+    <svg viewBox="0 0 24 24" className="skill-logo">
+      <path fill="#019833" d="M12 2L2 12l10 10 10-10L12 2z"/>
+      <path fill="#FFF" d="M12 5l-7 7 7 7 7-7-7-7z"/>
+      <text x="12" y="14" fill="#019833" fontSize="8" fontWeight="bold" fontFamily="serif" textAnchor="middle">V</text>
+    </svg>
+  ),
+  grep: (
+    // Grep - Search/magnifying glass with regex
+    <svg viewBox="0 0 24 24" className="skill-logo">
+      <circle fill="none" stroke="#4CAF50" strokeWidth="2" cx="10" cy="10" r="6"/>
+      <path fill="#4CAF50" d="M14.5 14.5L20 20" stroke="#4CAF50" strokeWidth="3" strokeLinecap="round"/>
+      <text x="10" y="12" fill="#4CAF50" fontSize="6" fontWeight="bold" fontFamily="monospace" textAnchor="middle">.*</text>
+    </svg>
+  ),
+  awk: (
+    // Awk/Sed - Text processing icon
+    <svg viewBox="0 0 24 24" className="skill-logo">
+      <rect fill="#FF9800" x="3" y="3" width="18" height="18" rx="2"/>
+      <path fill="#FFF" d="M6 7h12v2H6zM6 11h10v2H6zM6 15h8v2H6z"/>
+      <path fill="#FFF3E0" d="M16 11l3 3-3 3v-2h-2v-2h2v-2z"/>
+    </svg>
+  ),
+  sed: (
+    <svg viewBox="0 0 24 24" className="skill-logo">
+      <path fill="#9C27B0" d="M3 5v14h18V5H3zm16 12H5V7h14v10z"/>
+      <path fill="#9C27B0" d="M7 9h10v2H7V9zm0 3h8v2H7v-2z"/>
+    </svg>
+  ),
 };
 
 /**
@@ -178,26 +324,26 @@ const TECH_LOGOS = {
  */
 const SKILL_CATEGORIES = Object.freeze([
   {
-    id: 'programming',
-    title: 'Programming',
-    icon: '💻',
+    id: 'frontend',
+    title: 'Frontend',
+    icon: '🎨',
     skills: [
+      { name: 'React', logo: 'react' },
       { name: 'JavaScript', logo: 'javascript' },
-      { name: 'Python', logo: 'python' },
-      { name: 'Java', logo: 'java' },
       { name: 'TypeScript', logo: 'typescript' },
-      { name: 'SQL', logo: 'sql' },
+      { name: 'HTML/CSS', logo: 'html' },
+      { name: 'Figma', logo: 'figma' },
     ],
   },
   {
-    id: 'web',
-    title: 'Web Development',
-    icon: '🌐',
+    id: 'backend',
+    title: 'Backend',
+    icon: '⚙️',
     skills: [
-      { name: 'React', logo: 'react' },
       { name: 'Node.js', logo: 'nodejs' },
       { name: 'Express.js', logo: 'express' },
-      { name: 'HTML/CSS', logo: 'html' },
+      { name: 'Python', logo: 'python' },
+      { name: 'Java', logo: 'java' },
       { name: 'REST APIs', logo: 'restapi' },
     ],
   },
@@ -208,6 +354,7 @@ const SKILL_CATEGORIES = Object.freeze([
     skills: [
       { name: 'MongoDB', logo: 'mongodb' },
       { name: 'PostgreSQL', logo: 'postgresql' },
+      { name: 'SQL', logo: 'sql' },
     ],
   },
   {
@@ -219,21 +366,36 @@ const SKILL_CATEGORIES = Object.freeze([
       { name: 'AWS', logo: 'aws' },
       { name: 'Docker', logo: 'docker' },
       { name: 'Kubernetes', logo: 'kubernetes' },
+      { name: 'Terraform', logo: 'terraform' },
       { name: 'CI/CD', logo: 'cicd' },
     ],
   },
   {
-    id: 'tools',
-    title: 'Tools & Others',
-    icon: '🛠️',
+    id: 'security',
+    title: 'Cloud Security',
+    icon: '🔐',
     skills: [
-      { name: 'Git', logo: 'git' },
-      { name: 'VS Code', logo: 'vscode' },
+      { name: 'IAM', logo: 'iam' },
+      { name: 'Firewall/WAF', logo: 'firewall' },
+      { name: 'SIEM', logo: 'siem' },
+      { name: 'Wireshark', logo: 'wireshark' },
+      { name: 'Nmap', logo: 'nmap' },
+      { name: 'Burp Suite', logo: 'burpsuite' },
+      { name: 'Splunk', logo: 'splunk' },
+    ],
+  },
+  {
+    id: 'linux',
+    title: 'Linux & Tools',
+    icon: '🐧',
+    skills: [
       { name: 'Linux', logo: 'linux' },
-      { name: 'Agile/Scrum', logo: 'agile' },
-      { name: 'Jira', logo: 'jira' },
-      { name: 'Figma', logo: 'figma' },
-      { name: 'Testing', logo: 'testing' },
+      { name: 'Bash', logo: 'bash' },
+      { name: 'SSH', logo: 'ssh' },
+      { name: 'Vim', logo: 'vim' },
+      { name: 'Grep', logo: 'grep' },
+      { name: 'Awk/Sed', logo: 'awk' },
+      { name: 'Git', logo: 'git' },
     ],
   },
 ]);

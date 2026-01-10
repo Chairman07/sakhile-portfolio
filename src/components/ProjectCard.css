@@ -19,7 +19,7 @@
   left: 0;
   right: 0;
   height: 3px;
-  background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary, #4a9f9f), var(--accent-primary));
+  background: linear-gradient(90deg, var(--accent-bg), var(--accent-secondary, #4a9f9f), var(--accent-bg));
   background-size: 200% 100%;
   transform: scaleX(0);
   transform-origin: left;
@@ -113,7 +113,7 @@
 }
 
 .project-link:hover {
-  background: var(--accent-primary);
+  background: var(--accent-bg);
   color: var(--bg-primary);
   transform: scale(1.15) rotate(5deg);
   box-shadow: 0 8px 20px rgba(47, 79, 79, 0.4);
@@ -176,7 +176,7 @@
 
 .tech-item:hover {
   background: var(--accent-primary);
-  color: var(--bg-primary);
+  color: #FFFFFF;
   transform: translateY(-2px);
 }
 

@@ -21,7 +21,7 @@ main {
   top: -100%;
   left: 50%;
   transform: translateX(-50%);
-  background: var(--accent-primary);
+  background: var(--accent-bg);
   color: var(--bg-primary);
   padding: 1rem 2rem;
   border-radius: 0 0 8px 8px;

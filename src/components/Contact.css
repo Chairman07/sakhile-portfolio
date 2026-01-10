@@ -176,7 +176,7 @@
   content: '';
   position: absolute;
   inset: -3px;
-  background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary, #4a9f9f));
+  background: linear-gradient(135deg, var(--accent-bg), var(--accent-secondary, #4a9f9f));
   border-radius: 50%;
   opacity: 0;
   transition: opacity 0.3s ease;
@@ -185,7 +185,7 @@
 
 .social-link:hover {
   color: var(--bg-primary);
-  background: var(--accent-primary);
+  background: var(--accent-bg);
   transform: translateY(-5px) scale(1.1);
   box-shadow: 0 15px 30px rgba(47, 79, 79, 0.3);
 }

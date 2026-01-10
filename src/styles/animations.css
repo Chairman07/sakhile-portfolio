@@ -512,7 +512,7 @@
 .particle-1 {
   width: 10px;
   height: 10px;
-  background: var(--accent-primary);
+  background: var(--accent-bg);
   opacity: 0.3;
   animation: float 8s ease-in-out infinite;
 }

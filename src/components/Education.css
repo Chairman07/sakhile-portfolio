@@ -278,18 +278,18 @@
 
 /* Incomplete module styling */
 .module-item.incomplete {
-  background: rgba(255, 193, 7, 0.1);
-  color: #ffc107;
-  border: 1px solid rgba(255, 193, 7, 0.3);
+  background: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+  border: 1px solid rgba(239, 68, 68, 0.3);
 }
 
 .module-item.incomplete:hover {
-  background: rgba(255, 193, 7, 0.2);
-  border-color: #ffc107;
+  background: rgba(239, 68, 68, 0.2);
+  border-color: #ef4444;
 }
 
 .education-modules.incomplete .modules-label {
-  color: #ffc107;
+  color: #ef4444;
 }
 
 /* =================================
