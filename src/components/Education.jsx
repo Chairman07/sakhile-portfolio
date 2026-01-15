@@ -50,7 +50,15 @@ const EDUCATION_DATA = Object.freeze([
     incompleteModules: ['Databases'],
     type: 'university',
   },
-  // Add more education entries as needed
+  {
+    id: 2,
+    degree: 'Matric / Grade 12',
+    institution: 'Lugebhuta Highschool',
+    location: 'South Africa',
+    duration: '',
+    description: 'National Senior Certificate.',
+    type: 'highschool',
+  },
 ]);
 
 /**

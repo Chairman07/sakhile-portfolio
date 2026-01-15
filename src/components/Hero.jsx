@@ -86,12 +86,50 @@ function Hero() {
           <div className="decoration-circle circle-1" />
           <div className="decoration-circle circle-2" />
           <div className="decoration-circle circle-3" />
-          {/* Floating particles */}
-          <div className="particle particle-1" style={{ top: '20%', left: '10%' }} />
-          <div className="particle particle-2" style={{ top: '60%', right: '15%' }} />
-          <div className="particle particle-3" style={{ top: '80%', left: '20%' }} />
-          <div className="particle particle-1" style={{ top: '30%', right: '25%' }} />
-          <div className="particle particle-2" style={{ top: '70%', left: '60%' }} />
+          {/* Floating particles - Light mode only */}
+          <div className="particles-container">
+            <div className="particle particle-1" style={{ top: '20%', left: '10%' }} />
+            <div className="particle particle-2" style={{ top: '60%', right: '15%' }} />
+            <div className="particle particle-3" style={{ top: '80%', left: '20%' }} />
+            <div className="particle particle-1" style={{ top: '30%', right: '25%' }} />
+            <div className="particle particle-2" style={{ top: '70%', left: '60%' }} />
+          </div>
+          {/* Starlight roof - Rolls Royce inspired - Dark mode only */}
+          <div className="starlight-container">
+            {/* Layer 1 - Bright stars */}
+            <div className="star star-bright" style={{ top: '8%', left: '12%' }} />
+            <div className="star star-bright" style={{ top: '15%', left: '45%' }} />
+            <div className="star star-bright" style={{ top: '22%', right: '18%' }} />
+            <div className="star star-bright" style={{ top: '35%', left: '8%' }} />
+            <div className="star star-bright" style={{ top: '45%', right: '35%' }} />
+            <div className="star star-bright" style={{ top: '60%', left: '25%' }} />
+            <div className="star star-bright" style={{ top: '70%', right: '12%' }} />
+            <div className="star star-bright" style={{ top: '85%', left: '55%' }} />
+            {/* Layer 2 - Medium stars */}
+            <div className="star star-medium" style={{ top: '5%', left: '30%' }} />
+            <div className="star star-medium" style={{ top: '12%', right: '40%' }} />
+            <div className="star star-medium" style={{ top: '25%', left: '60%' }} />
+            <div className="star star-medium" style={{ top: '30%', right: '8%' }} />
+            <div className="star star-medium" style={{ top: '42%', left: '18%' }} />
+            <div className="star star-medium" style={{ top: '55%', right: '25%' }} />
+            <div className="star star-medium" style={{ top: '65%', left: '40%' }} />
+            <div className="star star-medium" style={{ top: '78%', right: '45%' }} />
+            <div className="star star-medium" style={{ top: '88%', left: '15%' }} />
+            <div className="star star-medium" style={{ top: '92%', right: '20%' }} />
+            {/* Layer 3 - Dim stars */}
+            <div className="star star-dim" style={{ top: '3%', left: '22%' }} />
+            <div className="star star-dim" style={{ top: '10%', left: '68%' }} />
+            <div className="star star-dim" style={{ top: '18%', right: '55%' }} />
+            <div className="star star-dim" style={{ top: '28%', left: '35%' }} />
+            <div className="star star-dim" style={{ top: '38%', right: '60%' }} />
+            <div className="star star-dim" style={{ top: '48%', left: '52%' }} />
+            <div className="star star-dim" style={{ top: '58%', right: '42%' }} />
+            <div className="star star-dim" style={{ top: '68%', left: '72%' }} />
+            <div className="star star-dim" style={{ top: '75%', right: '68%' }} />
+            <div className="star star-dim" style={{ top: '82%', left: '38%' }} />
+            <div className="star star-dim" style={{ top: '90%', right: '55%' }} />
+            <div className="star star-dim" style={{ top: '95%', left: '78%' }} />
+          </div>
           {/* Grid pattern */}
           <div className="grid-pattern" />
         </div>
