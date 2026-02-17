@@ -328,20 +328,10 @@
 .hero-name {
   font-size: clamp(2.5rem, 8vw, 5rem);
   font-weight: 800;
-  color: var(--text-primary);
+  color: var(--accent-primary);
   line-height: 1.1;
   margin-bottom: 0.75rem;
   letter-spacing: -2px;
-}
-
-/* Dark mode name color */
-:root .hero-name {
-  color: #CDB4FF;
-}
-
-/* Light mode uses default text color */
-[data-theme="light"] .hero-name {
-  color: var(--text-primary);
 }
 
 .hero-name .accent {
