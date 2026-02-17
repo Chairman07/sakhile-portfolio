@@ -17,16 +17,15 @@ const HERO_CONTENT = {
   greeting: 'Hi, my name is',
   name: 'Sakhile Twala',
   tagline: 'I build things for the web & cloud.',
-  description: `I'm a passionate Full Stack Developer based in South Africa, 
+  description: `I'm a passionate Junior Full Stack Developer based in South Africa, 
     specializing in creating exceptional digital experiences. 
     Currently focused on building accessible, cloud-native applications.`,
 };
 
 /** Roles for typing animation */
 const ROLES = [
-  'Full Stack Developer',
-  'Cloud Engineer',
-  'UI/UX Enthusiast',
+  'Software Engineer',
+  'Cloud Security Engineer',
   'Problem Solver',
 ];
 

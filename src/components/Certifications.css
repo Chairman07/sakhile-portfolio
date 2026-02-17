@@ -74,8 +74,6 @@
   transition: transform 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   transition-delay: var(--stagger);
   will-change: transform;
-  /* Mobile: single column - cards slide down (halved movement) */
-  transform: translateY(calc(var(--offset, 0) * (70px + 0.625rem)));
 }
 
 /* Row-based delays for staggered animation effect */
@@ -284,12 +282,7 @@
     gap: 1.5rem;
   }
   
-  /* Snake movement: translate cards by offset * (card width + gap) */
-  /* Each card slides smoothly in sequence */
-  .cert-slot.cert-slot-animated {
-    /* Move horizontally on 2-col grid based on offset */
-    transform: translateX(calc(var(--offset) * (50% + 0.75rem)));
-  }
+
   
   /* Row-based delays for 2-column layout */
   /* Row 1 (cards 1-2): no delay */
@@ -327,10 +320,7 @@
     grid-template-columns: repeat(3, 1fr);
   }
   
-  /* Snake movement on 3-col grid */
-  .cert-slot.cert-slot-animated {
-    transform: translateX(calc(var(--offset) * (33.33% + 0.5rem)));
-  }
+
   
   /* Row-based delays for 3-column layout */
   /* Row 1 (cards 1-3): no delay */
