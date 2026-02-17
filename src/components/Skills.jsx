@@ -86,9 +86,11 @@ const TECH_LOGOS = {
     </svg>
   ),
   azure: (
-    <svg viewBox="0 0 24 24" className="skill-logo">
-      <path fill="#0078D4" d="M13.05 4.24L6.56 18.05a.5.5 0 0 0 .46.7h12.24a.25.25 0 0 0 .21-.39L13.5 4.25a.26.26 0 0 0-.45 0zM8.87 15.65a.25.25 0 0 1-.24-.32l3.34-9.42a.25.25 0 0 1 .47 0l3.35 9.42a.25.25 0 0 1-.24.32z"/>
-      <path fill="#50E6FF" d="M1.08 18.05l5.42-7.35a.25.25 0 0 1 .4 0l2.37 3.2a.25.25 0 0 1-.2.4H1.54a.5.5 0 0 0-.46.75z"/>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" className="skill-logo">
+      <g>
+        <polygon fill="#0089D6" points="6,42 24,6 42,42 33.5,42 24,24 14.5,42"/>
+        <polygon fill="#0089D6" opacity="0.6" points="24,6 24,24 33.5,42 42,42"/>
+      </g>
     </svg>
   ),
   aws: (
